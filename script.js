@@ -17,18 +17,19 @@ window.addEventListener('click', (event) => {
     }
 });
 
-saveToPhoneBtn.addEventListener('click', () => {
+saveToPhoneBtn.addEventListener('click', async () => {
+    const base64Image = await imageToBase64('img/img.jpg');
     const vCardData = `
 BEGIN:VCARD
 VERSION:3.0
-FN:Abboskhon Makhamatov
-ORG:Entrepreneurship Development Company
+FN:Entrepreneurship Development Company
+ORG:Abboskhon Makhamatov
 TITLE:Director
 TEL;TYPE=WORK,VOICE:+998909467711
-TEL;TYPE=DOM,VOICE:+998712055757
+TEL;TYPE=HOME,VOICE:+998712055757
 EMAIL:a.makhamatov@edcom.uz
 URL:https://edcom.uz/
-PHOTO;ENCODING=b;TYPE=JPEG:${imageToBase64('img/img.jpg')}
+PHOTO;ENCODING=b;TYPE=JPEG:${base64Image}
 END:VCARD
 `;
 
@@ -46,21 +47,22 @@ END:VCARD
 });
 
 function imageToBase64(imagePath) {
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    const img = new Image();
-    img.src = imagePath;
+    return new Promise((resolve, reject) => {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        const img = new Image();
+        img.src = imagePath;
 
-    img.onload = () => {
-        canvas.width = img.width;
-        canvas.height = img.height;
-        ctx.drawImage(img, 0, 0);
-        return canvas.toDataURL('image/jpeg').replace(/^data:image\/jpeg;base64,/, '');
-    };
+        img.onload = () => {
+            canvas.width = img.width;
+            canvas.height = img.height;
+            ctx.drawImage(img, 0, 0);
+            const base64String = canvas.toDataURL('image/jpeg').replace(/^data:image\/jpeg;base64,/, '');
+            resolve(base64String);
+        };
 
-    img.onerror = () => {
-        console.error('Error loading image.');
-    };
-
-    return '';
+        img.onerror = () => {
+            reject('Error loading image.');
+        };
+    });
 }
