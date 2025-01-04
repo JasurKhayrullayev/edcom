@@ -12,7 +12,6 @@ body{
     background-color: #3F51B5;
     display: flex;
     justify-content: center;
-    padding-top: 60px;
 }
 
 .card-top{
@@ -104,15 +103,9 @@ body{
     display: flex;
 }
 
-.card-bottom-items div{
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
 .card-bottom-icons{
-    color: #a9a9a9;
     margin-right: 30px;
+    color: #a9a9a9;
 }
 
 .card-bottom-links{
@@ -144,13 +137,12 @@ body{
 
 .card-button{
     display: flex;
-    align-self: center;
+    align-self: flex-end;
     padding: 20px;
     color: white;
     background-color: rgb(242, 78, 105);
     border: none;
-    font-size: 24px;
-    gap: 10px;
+    border-radius: 50%;
 }
 
 .card-button:hover{
