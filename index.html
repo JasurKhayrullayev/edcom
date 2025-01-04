@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://kit.fontawesome.com/a076d05399.js'crossorigin='anonymous'></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="card-body">
+        <div class="card-top">
+            <img width="100" height="101" src="img/img.jpg" class="card-img" alt="Director image">
+            <h2 class="card-name">Abboskhon Makhamatov</h2>
+            <p class="card-position">DIRECTOR</p>
+            <div class="card-connect">
+                <a href="tel:+998909467711"><i class="fa fa-phone" style='font-size:20px'></i><span>CALL</span></a>
+                <a href="mailto:a.makhamatov@edcom.uz"><i class='fa fa-paper-plane' style='font-size:18px'></i><span>EMAIL</span></a>
+            </div>
+        </div>
+    </div>
+    <div class="card-bottom">
+        <div class="card-bottom-wrap">
+            <div class="card-bottom-items">
+                <span class="card-bottom-icons"><i class="fa fa-phone" style='font-size:30px'></i></span>
+                <div>
+                    <span class="card-bottom-links"><a href="tel:+998909467711">+998909467711</a>Mobile</span>
+                    <span class="card-bottom-links"><a href="tel:+998712055757">+998712055757</a>Telephone</span>
+                </div>
+            </div>
+            <div class="card-bottom-items">
+                <span class="card-bottom-icons"><i class="fa fa-envelope" style="font-size:30px"></i></span>
+                <span class="card-bottom-links"><a href="mailto:a.makhamatov@edcom.uz">a.makhamatov@edcom.uz</a>Email</span>
+            </div>
+            <div class="card-bottom-items">
+                <span class="card-bottom-icons"><i class="fa fa-briefcase" style="font-size:30px"></i></span>
+                <span class="card-bottom-pr"><p>ENTREPRENEURSHIP DEVELOPMENT COMPANY</p><p>DIRECTOR</p></span>
+            </div>
+            <div class="card-bottom-items">
+                <span class="card-bottom-icons"><i class="fa fa-globe" style='font-size:30px'></i></span>
+                <span class="card-bottom-links"><a href="https://edcom.uz/">www.edcom.uz</a>Website</span>
+            </div>
+            <button id="openModalBtn" class="card-button">
+                <span><i class="fa fa-user-plus" style='font-size:24px'></i></span>
+                <span>Download vCard</span>
+            </button>
+        </div>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Save Contact Data</h2>
+            <p class="modal-pr">How would you like to save contact data?</p>
+            <div class="modal-links">
+                <a href="mailto:a.makhamatov@edcom.uz"><i class="fa fa-envelope" style="font-size:20px; margin-right:15px"></i>Send by Email</a>
+                <a href="#" id="saveToPhoneBtn"><i class="fa fa-id-badge" style="font-size:20px; margin-right:15px"></i>Save to My Phone</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
