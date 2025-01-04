@@ -18,7 +18,6 @@ window.addEventListener('click', (event) => {
 });
 
 saveToPhoneBtn.addEventListener('click', () => {
-    // vCard content
     const vCardData = `
 BEGIN:VCARD
 VERSION:3.0
